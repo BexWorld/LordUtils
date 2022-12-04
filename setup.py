@@ -4,7 +4,7 @@ setup(
     name='LordUtils',
     version='0.0.0.1',
     packages=find_packages(),
-    url='',
+    url='https://git.lordbex.xyz/PipModule/LordUtils.git',
     license='',
     author='lordbex',
     author_email='lordibex@protonmail.com',

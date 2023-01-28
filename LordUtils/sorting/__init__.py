@@ -7,10 +7,10 @@ def __get_key(var):
     return key
 
 
-def sort_numeric(cls, items, preformat=None):
+def sort_numeric(items, preformat=None):
     """Sorted lists based on the number contained in the items"""
     if preformat is None:
-        pre_f = cls.__get_key
+        pre_f = __get_key
     else:
-        pre_f = lambda x: cls.__getKey(preformat(x))
+        pre_f = lambda x: __get_key(preformat(x))
     return sorted(items, key=pre_f)

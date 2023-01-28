@@ -9,6 +9,7 @@ setup(
     author='lordbex',
     author_email='lordibex@protonmail.com',
     description='Helper Package for other Lord packages',
+    long_description='Helper Package for other Lord packages',
     include_package_data=True,
     install_requires=[
         'regex',

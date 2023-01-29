@@ -1,6 +1,7 @@
 import regex as re
 import validators
 from fnmatch import fnmatchcase as fnmatch
+from ..regs.patterns import pattern_number
 
 
 def is_image(file):
@@ -48,3 +49,44 @@ def fn_match_value(value: str, m: str | list):
 
 def remove_double(v: list):
     return list(dict.fromkeys(v))
+
+
+def convert_to_int(value: str | None, default=None):
+    if value is None:
+        return default
+
+    if value.isdigit():
+        return int(value)
+
+    value = re.sub('^([^0-9]*)([0-9]+)([^0-9]*)$', r'\2', value)
+    if value.isdigit():
+        return int(value)
+
+    return default
+
+
+def convert_to_float(value: str | None, default=None):
+    if value is None:
+        return default
+
+    try:
+        r = float(value)
+        return r
+    except ValueError:
+        pass
+
+    value = re.sub('^([^0-9]*)([0-9.]+)([^0-9]*)$', r'\2', value)
+
+    try:
+        r = float(value)
+        return r
+    except ValueError:
+        pass
+
+    return default
+
+
+def get_numbers_from_string(var: str):
+    numbers = pattern_number.findall(var)
+    numbers = [int(numeric_string) for numeric_string in numbers]
+    return numbers

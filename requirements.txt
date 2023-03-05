@@ -1,4 +1,3 @@
-setuptools==65.5.0
-regex~=2022.9.13
+regex==2022.10.31
 validators~=0.20.0
 rich

@@ -1,7 +1,7 @@
-LordFile
-========
+LordUtils
+=========
 
-File Manager from LordBex
+Helper Package for other Lord packages
 
 *by LordBex*
 
